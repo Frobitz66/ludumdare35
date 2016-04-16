@@ -8,6 +8,7 @@ public class droplet : MonoBehaviour {
     public float JumpForce = 50;
     private float groundRadius = 1.5f;
 
+
     private CircleCollider2D groundCheck;
 
     // Use this for initialization
@@ -17,11 +18,17 @@ public class droplet : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
         grounded = Physics2D.OverlapCircle(transform.position, groundRadius, whatIsGround);
         float move = Input.GetAxis("Horizontal");
         // anim.SetFloat("Speed", Mathf.Abs(move));
 
-        GetComponent<Rigidbody2D>().velocity = new Vector2(move * maxSpeed, GetComponent<Rigidbody2D>().velocity.y);
+
+        if (grounded) // this if is so he can't move while jumping
+        {
+            GetComponent<Rigidbody2D>().velocity = new Vector2(move * maxSpeed, GetComponent<Rigidbody2D>().velocity.y);
+        }
+
 
         if (grounded && Input.GetButtonDown("Jump"))
         {
