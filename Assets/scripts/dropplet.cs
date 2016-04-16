@@ -19,12 +19,13 @@ public class dropplet : MonoBehaviour {
 		//	Debug.Log ("frozen");
 
 		//}
-		Debug.Log(heatstate);
+		//Debug.Log(heatstate);
 
 		}
-	void OnTriggerStay ( Collider col ){
+	void OnTriggerEnter ( Collider col ){
 		Debug.Log (col.name);
-		if (col.gameObject.tag == "red_crystal") {
+		if (col.gameObject.tag == ("red_crystal"))
+			{
 			heatstate = 1;
 		} 
 		//if (col.gameObject.tag == "blue_crystal")
