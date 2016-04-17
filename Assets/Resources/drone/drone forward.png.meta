@@ -1,9 +1,28 @@
 fileFormatVersion: 2
 guid: c47ad5dc4d20aae4b94f7d4adcf088bb
-timeCreated: 1460854441
+timeCreated: 1460928946
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: drone forward_0
+    21300002: drone forward_1
+    21300004: drone forward_2
+    21300006: drone forward_3
+    21300008: drone forward_4
+    21300010: drone forward_5
+    21300012: drone forward_6
+    21300014: drone forward_7
+    21300016: drone forward_8
+    21300018: drone forward_9
+    21300020: drone forward_10
+    21300022: drone forward_11
+    21300024: drone forward_12
+    21300026: drone forward_13
+    21300028: drone forward_14
+    21300030: drone forward_15
+    21300032: drone forward_16
+    21300034: drone forward_17
+    21300036: drone forward_18
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -30,7 +49,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     filterMode: -1
-    aniso: -1
+    aniso: 16
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
@@ -38,7 +57,7 @@ TextureImporter:
   rGBM: 0
   compressionQuality: 50
   allowsAlphaSplitting: 0
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -49,7 +68,452 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: drone forward_0
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 45
+        width: 169
+        height: 135
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32.5, y: 59.5}
+        - {x: -39.5, y: 59.5}
+        - {x: -43.5, y: 57.5}
+        - {x: -43.5, y: 52.5}
+        - {x: -11.5, y: 33.5}
+        - {x: -56.5, y: 59.5}
+        - {x: -84.5, y: 59.5}
+        - {x: -84.5, y: 7.5}
+        - {x: -64.5, y: -35.5}
+        - {x: 31.5, y: -67.5}
+        - {x: 84.5, y: -67.5}
+        - {x: 84.5, y: -5.5}
+        - {x: 76.5, y: -0.5}
+      - - {x: 77.5, y: -22.5}
+        - {x: 81.5, y: -25.5}
+        - {x: 83.5, y: -25.5}
+        - {x: 84.5, y: -24.5}
+        - {x: 84.5, y: -19.5}
+        - {x: 83.5, y: -17.5}
+        - {x: 78.5, y: -17.5}
+        - {x: 77.5, y: -18.5}
+      - - {x: 32.5, y: 38.5}
+        - {x: 35.5, y: 34.5}
+        - {x: 38.5, y: 33.5}
+        - {x: 41.5, y: 34.5}
+        - {x: 41.5, y: 38.5}
+        - {x: 39.5, y: 40.5}
+        - {x: 34.5, y: 41.5}
+      - - {x: 17.5, y: 57.5}
+        - {x: 20.5, y: 57.5}
+        - {x: 24.5, y: 58.5}
+        - {x: 24.5, y: 64.5}
+        - {x: 18.5, y: 64.5}
+        - {x: 16.5, y: 63.5}
+        - {x: 16.5, y: 59.5}
+      - - {x: 7.5, y: 67.5}
+        - {x: 7.5, y: 63.5}
+        - {x: 10.5, y: 61.5}
+        - {x: 12.5, y: 61.5}
+        - {x: 14.5, y: 62.5}
+        - {x: 14.5, y: 65.5}
+        - {x: 12.5, y: 67.5}
+    - name: drone forward_1
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 46
+        width: 170
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -21, y: 45}
+        - {x: -23, y: 40}
+        - {x: -57, y: 57}
+        - {x: -65, y: 58}
+        - {x: -76, y: 58}
+        - {x: -85, y: 50}
+        - {x: -85, y: 25}
+        - {x: -46, y: -21}
+        - {x: -6, y: -57}
+        - {x: 43, y: -67}
+        - {x: 81, y: -67}
+        - {x: 81, y: 0}
+        - {x: -18, y: 48}
+      - - {x: 80, y: -16}
+        - {x: 78, y: -18}
+        - {x: 78, y: -21}
+        - {x: 83, y: -25}
+        - {x: 85, y: -25}
+        - {x: 85, y: -19}
+        - {x: 84, y: -17}
+      - - {x: 32, y: 40}
+        - {x: 32, y: 38}
+        - {x: 37, y: 34}
+        - {x: 39, y: 34}
+        - {x: 41, y: 35}
+        - {x: 41, y: 38}
+        - {x: 38, y: 41}
+        - {x: 34, y: 42}
+      - - {x: 16, y: 62}
+        - {x: 16, y: 59}
+        - {x: 18, y: 57}
+        - {x: 20, y: 57}
+        - {x: 24, y: 61}
+        - {x: 23, y: 64}
+        - {x: 18, y: 64}
+      - - {x: 7, y: 67}
+        - {x: 7, y: 64}
+        - {x: 9, y: 62}
+        - {x: 12, y: 62}
+        - {x: 14, y: 64}
+        - {x: 14, y: 65}
+        - {x: 12, y: 67}
+    - name: drone forward_2
+      rect:
+        serializedVersion: 2
+        x: 542
+        y: 169
+        width: 14
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: drone forward_3
+      rect:
+        serializedVersion: 2
+        x: 757
+        y: 169
+        width: 14
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: drone forward_4
+      rect:
+        serializedVersion: 2
+        x: 967
+        y: 167
+        width: 13
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: drone forward_5
+      rect:
+        serializedVersion: 2
+        x: 1179
+        y: 169
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: drone forward_6
+      rect:
+        serializedVersion: 2
+        x: 1189
+        y: 166
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: drone forward_7
+      rect:
+        serializedVersion: 2
+        x: 1609
+        y: 163
+        width: 13
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: drone forward_8
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 45
+        width: 166
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 28, y: 14.5}
+        - {x: 42, y: 14.5}
+        - {x: 46, y: 19.5}
+        - {x: 46, y: 22.5}
+        - {x: 3, y: 43.5}
+        - {x: -2, y: 39.5}
+        - {x: 0, y: 32.5}
+        - {x: -54, y: 59.5}
+        - {x: -77, y: 59.5}
+        - {x: -83, y: 54.5}
+        - {x: -83, y: 27.5}
+        - {x: -44, y: -0.5}
+        - {x: -39, y: 5.5}
+        - {x: -31, y: 0.5}
+        - {x: -31, y: 1.5}
+        - {x: -33, y: 0.5}
+        - {x: -39, y: -4.5}
+        - {x: -47, y: -14.5}
+        - {x: -1, y: -49.5}
+        - {x: 48, y: -59.5}
+        - {x: 83, y: -59.5}
+        - {x: 83, y: -39.5}
+        - {x: 77, y: -22.5}
+        - {x: 53, y: -1.5}
+        - {x: 41, y: 7.5}
+      - - {x: 34, y: 44.5}
+        - {x: 37, y: 40.5}
+        - {x: 40, y: 39.5}
+        - {x: 43, y: 40.5}
+        - {x: 43, y: 44.5}
+        - {x: 41, y: 46.5}
+        - {x: 36, y: 47.5}
+    - name: drone forward_9
+      rect:
+        serializedVersion: 2
+        x: 1395
+        y: 163
+        width: 14
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: drone forward_10
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 46
+        width: 170
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -29, y: 57.5}
+        - {x: -85, y: 57.5}
+        - {x: -85, y: 20.5}
+        - {x: -41, y: -21.5}
+        - {x: 50, y: -57.5}
+        - {x: 85, y: -57.5}
+        - {x: 85, y: -27.5}
+        - {x: 43, y: 40.5}
+      - - {x: 81, y: -8.5}
+        - {x: 81, y: -10.5}
+        - {x: 84, y: -13.5}
+        - {x: 85, y: -13.5}
+        - {x: 85, y: -5.5}
+        - {x: 84, y: -5.5}
+      - - {x: 33, y: 49.5}
+        - {x: 33, y: 45.5}
+        - {x: 35, y: 40.5}
+        - {x: 39, y: 40.5}
+        - {x: 42, y: 41.5}
+        - {x: 42, y: 45.5}
+        - {x: 39, y: 48.5}
+        - {x: 35, y: 49.5}
+    - name: drone forward_11
+      rect:
+        serializedVersion: 2
+        x: 875
+        y: 46
+        width: 173
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19.5, y: 55}
+        - {x: -86.5, y: 55}
+        - {x: -86.5, y: 17}
+        - {x: -0.5, y: -55}
+        - {x: 86.5, y: -55}
+        - {x: 86.5, y: -30}
+        - {x: 35.5, y: 39}
+      - - {x: 81.5, y: -6}
+        - {x: 81.5, y: -9}
+        - {x: 83.5, y: -11}
+        - {x: 86.5, y: -11}
+        - {x: 86.5, y: -4}
+        - {x: 83.5, y: -4}
+      - - {x: 35.5, y: 51}
+        - {x: 31.5, y: 51}
+        - {x: 30.5, y: 49}
+        - {x: 30.5, y: 45}
+        - {x: 33.5, y: 43}
+        - {x: 36.5, y: 42}
+        - {x: 39.5, y: 42}
+        - {x: 40.5, y: 44}
+        - {x: 40.5, y: 48}
+    - name: drone forward_12
+      rect:
+        serializedVersion: 2
+        x: 1089
+        y: 46
+        width: 176
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -88, y: 54}
+        - {x: -88, y: 15}
+        - {x: -52, y: -44}
+        - {x: -13, y: -54}
+        - {x: 88, y: -54}
+        - {x: 88, y: -1}
+        - {x: 69, y: 48}
+        - {x: 35, y: 54}
+      - - {x: 81, y: -2}
+        - {x: 79, y: -5}
+        - {x: 83, y: -10}
+        - {x: 87, y: -11}
+        - {x: 88, y: -11}
+        - {x: 88, y: -5}
+        - {x: 87, y: -3}
+      - - {x: 85, y: 0}
+        - {x: 88, y: 1}
+        - {x: 88, y: 4}
+        - {x: 85, y: 5}
+        - {x: 83, y: 3}
+      - - {x: 28, y: 48}
+        - {x: 31, y: 44}
+        - {x: 35, y: 42}
+        - {x: 38, y: 43}
+        - {x: 39, y: 48}
+        - {x: 34, y: 51}
+        - {x: 29, y: 51}
+    - name: drone forward_13
+      rect:
+        serializedVersion: 2
+        x: 1307
+        y: 46
+        width: 179
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -89.5, y: 49.5}
+        - {x: -89.5, y: -0.5}
+        - {x: -65.5, y: -49.5}
+        - {x: 89.5, y: -49.5}
+        - {x: 89.5, y: -20.5}
+        - {x: 61.5, y: 24.5}
+        - {x: -9.5, y: 49.5}
+      - - {x: 82.5, y: 3.5}
+        - {x: 80.5, y: 1.5}
+        - {x: 80.5, y: -0.5}
+        - {x: 82.5, y: -3.5}
+        - {x: 86.5, y: -4.5}
+        - {x: 89.5, y: -4.5}
+        - {x: 89.5, y: 0.5}
+        - {x: 87.5, y: 3.5}
+      - - {x: 32.5, y: 45.5}
+        - {x: 35.5, y: 46.5}
+        - {x: 35.5, y: 49.5}
+        - {x: 27.5, y: 49.5}
+        - {x: 28.5, y: 46.5}
+    - name: drone forward_14
+      rect:
+        serializedVersion: 2
+        x: 1424
+        y: 143
+        width: 6
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: drone forward_15
+      rect:
+        serializedVersion: 2
+        x: 1519
+        y: 46
+        width: 178
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -49, y: 53}
+        - {x: -51, y: 47}
+        - {x: -35, y: 39}
+        - {x: -65, y: 50}
+        - {x: -78, y: 53}
+        - {x: -89, y: 42}
+        - {x: -89, y: 21}
+        - {x: -84, y: 14}
+        - {x: -45, y: -25}
+        - {x: 37, y: -53}
+        - {x: 89, y: -53}
+        - {x: 89, y: 21}
+        - {x: -31, y: 53}
+      - - {x: 83, y: -1}
+        - {x: 81, y: -3}
+        - {x: 81, y: -6}
+        - {x: 86, y: -10}
+        - {x: 88, y: -10}
+        - {x: 89, y: -9}
+        - {x: 89, y: -4}
+        - {x: 86, y: -1}
+      - - {x: 29, y: 50}
+        - {x: 27, y: 49}
+        - {x: 27, y: 45}
+        - {x: 32, y: 42}
+        - {x: 35, y: 42}
+        - {x: 37, y: 43}
+        - {x: 37, y: 48}
+        - {x: 35, y: 50}
+    - name: drone forward_16
+      rect:
+        serializedVersion: 2
+        x: 615
+        y: 88
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: drone forward_17
+      rect:
+        serializedVersion: 2
+        x: 833
+        y: 90
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: drone forward_18
+      rect:
+        serializedVersion: 2
+        x: 1045
+        y: 90
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     outline: []
   spritePackingTag: 
   userData: 
