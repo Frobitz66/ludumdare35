@@ -8,19 +8,42 @@ public class droplet : MonoBehaviour {
     public float JumpForce = 50;
     private float groundRadius = 1.5f;
     private Animator animator;
-	private int temperature = 21;
+	private float temperature = 21.0f;
+	public int Lives = 3;
+	private bool isAlive = true;
+	private float respawnTime; //The time at which we should respawn
+	private const float timeItTakesToRespawn = 3.0f; //The time from death that it takes us to respawn.
+	private Vector3 startingPosition;
 
+	public enum DropletState {
+		Ice = -1,
+		Water = 0,
+		Gas = 1
+	};
+
+	private DropletState state;
 
     private CircleCollider2D groundCheck;
+
+	public delegate void LivesChanged(int lives);
+	public event LivesChanged OnLivesChanged;
 
     // Use this for initialization
     void Start () {
         groundCheck = GetComponent<CircleCollider2D>();
         animator = GetComponent<Animator>();
+		isAlive = true;
+		startingPosition = this.transform.position;
     }
 	
 	// Update is called once per frame
 	void Update () {
+
+		if (!isAlive) {
+			if (Time.time >= respawnTime)
+				Respawn ();
+			return;
+		}
 
          grounded = Physics2D.OverlapCircle(transform.position, groundRadius, whatIsGround);
         float move = Input.GetAxis("Horizontal");
@@ -53,9 +76,57 @@ public class droplet : MonoBehaviour {
         //if (Inpu)
     }
 
-	public void IncrementTemperature(int delta){
-		temperature += delta;
-		//Do state switching check here.
+	public float GetTemperature(){
+		return temperature;
+	}
 
+	public float GetMaxTemperature(){
+		return 175.0f;
+	}
+
+	public float GetMinTemperature(){
+		return -75.0f;
+	}
+
+	public void IncrementTemperature(float delta){
+		if (!isAlive)
+			return;
+		
+		temperature += delta;
+
+		if (temperature >= GetMaxTemperature () || temperature <= GetMinTemperature ()) {
+			KillTheDroplet ();
+			return;
+		}
+		//TODO: Do state switching check here.
+	}
+
+	public void KillTheDroplet(){
+		if (!isAlive)
+			return;
+		
+		Lives--;
+		if (OnLivesChanged != null)
+			OnLivesChanged (Lives);
+
+		isAlive = false;
+		animator.SetBool("isAlive", false);
+
+		//TODO: 
+		//-Play death animation for current state.
+		respawnTime = Time.time + timeItTakesToRespawn;
+	}
+
+	public void SetDropletState(DropletState newState){
+		state = newState;
+		animator.SetBool("dropletState", (int)state);
+		//TODO: setup state-specfic stuff here
+	}
+
+	private void Respawn(){
+		isAlive = true;
+		animator.SetBool("isAlive", true);
+		temperature = 21.0f;
+		this.transform.position = startingPosition;
 	}
 }
