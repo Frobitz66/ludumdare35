@@ -133,7 +133,7 @@ public class droplet : MonoBehaviour {
 
 	public void SetDropletState(DropletState newState){
 		state = newState;
-		animator.SetBool("dropletState", (int)state);
+		animator.SetInteger("dropletState", (int)state);
 		//TODO: setup state-specfic stuff here
 	}
 
