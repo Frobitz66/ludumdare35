@@ -17,6 +17,7 @@ public class droplet : MonoBehaviour {
     void Start () {
         groundCheck = GetComponent<CircleCollider2D>();
         animator = GetComponent<Animator>();
+        Camera.main.GetComponent<SmoothCamera>().target = gameObject;
     }
 	
 	// Update is called once per frame
@@ -42,12 +43,10 @@ public class droplet : MonoBehaviour {
 
         if (GetComponent<Rigidbody2D>().velocity.x != 0)
         {
-            Debug.Log("walking");
             animator.SetBool("isWalking", true);
         }
         else
         {
-            Debug.Log("idling");
             animator.SetBool("isWalking", false);
         }
 
