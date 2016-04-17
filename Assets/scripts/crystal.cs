@@ -23,8 +23,10 @@ public class crystal : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (playerDroplet != null)
-			playerDroplet.IncrementTemperature (TemperatureChangePerSecond * Time.deltaTime);
+		if (playerDroplet != null) {
+			float increment = TemperatureChangePerSecond * Time.deltaTime;
+			playerDroplet.IncrementTemperature (increment);
+		}
 	}
 
 	void OnTriggerEnter2D(Collider2D col){
