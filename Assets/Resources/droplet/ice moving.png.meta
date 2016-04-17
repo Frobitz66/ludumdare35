@@ -1,10 +1,12 @@
 fileFormatVersion: 2
 guid: 0b2a69c02f8bc3644818e18c6e712604
-timeCreated: 1460869040
+timeCreated: 1460919114
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
     21300000: ice moving_0
+    21300002: ice moving_1
+    21300004: ice moving_2
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -54,38 +56,81 @@ TextureImporter:
     - name: ice moving_0
       rect:
         serializedVersion: 2
-        x: 48
-        y: 49
+        x: 148
+        y: 50
         width: 204
         height: 203
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 89, y: 59.5}
-        - {x: 94, y: 74.5}
-        - {x: 87, y: 101.5}
-        - {x: 79, y: 101.5}
+      - - {x: 87, y: 97.5}
+        - {x: 87, y: 93.5}
+        - {x: 89, y: 91.5}
+        - {x: 88, y: 90.5}
+        - {x: 83, y: 99.5}
         - {x: 77, y: 100.5}
+        - {x: 61, y: 81.5}
         - {x: 49, y: 94.5}
         - {x: 43, y: 101.5}
         - {x: -102, y: 101.5}
         - {x: -102, y: -101.5}
         - {x: 99, y: -101.5}
-        - {x: 100, y: -34.5}
-        - {x: 100, y: 57.5}
-        - {x: 95, y: 62.5}
-      - - {x: 87, y: 94.5}
-        - {x: 89, y: 92.5}
-        - {x: 92, y: 93.5}
-        - {x: 92, y: 97.5}
-        - {x: 90, y: 99.5}
-        - {x: 87, y: 98.5}
-      - - {x: 99, y: 96.5}
-        - {x: 101, y: 94.5}
-        - {x: 102, y: 94.5}
+        - {x: 102, y: -56.5}
         - {x: 102, y: 99.5}
-        - {x: 100, y: 99.5}
+        - {x: 89, y: 99.5}
+    - name: ice moving_1
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 48
+        width: 204
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 87, y: 97.5}
+        - {x: 87, y: 93.5}
+        - {x: 89, y: 91.5}
+        - {x: 88, y: 90.5}
+        - {x: 83, y: 99.5}
+        - {x: 77, y: 100.5}
+        - {x: 61, y: 81.5}
+        - {x: 49, y: 94.5}
+        - {x: 43, y: 101.5}
+        - {x: -102, y: 101.5}
+        - {x: -102, y: -101.5}
+        - {x: 99, y: -101.5}
+        - {x: 102, y: -56.5}
+        - {x: 102, y: 99.5}
+        - {x: 89, y: 99.5}
+    - name: ice moving_2
+      rect:
+        serializedVersion: 2
+        x: 848
+        y: 47
+        width: 204
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 87, y: 97.5}
+        - {x: 87, y: 93.5}
+        - {x: 89, y: 91.5}
+        - {x: 88, y: 90.5}
+        - {x: 83, y: 99.5}
+        - {x: 77, y: 100.5}
+        - {x: 61, y: 81.5}
+        - {x: 49, y: 94.5}
+        - {x: 43, y: 101.5}
+        - {x: -102, y: 101.5}
+        - {x: -102, y: -101.5}
+        - {x: 99, y: -101.5}
+        - {x: 102, y: -56.5}
+        - {x: 102, y: 99.5}
+        - {x: 89, y: 99.5}
     outline: []
   spritePackingTag: 
   userData: 

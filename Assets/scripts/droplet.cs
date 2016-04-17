@@ -100,6 +100,7 @@ public class droplet : MonoBehaviour {
         {
             GetComponent<Rigidbody2D>().AddForce(new Vector2(0, JumpForce));
         }
+			
     }
 		
 	public float GetTemperature(){
@@ -114,6 +115,7 @@ public class droplet : MonoBehaviour {
 		return -75.0f;
 	}
 
+	// Change the Temperature of Droplet (the name is misleading)
 	public void IncrementTemperature(float delta){
 		if (!isAlive)
 			return;
@@ -125,7 +127,7 @@ public class droplet : MonoBehaviour {
 			return;
 		}
 
-		//TODO: Do state switching check here.
+		//State switching check.
 		if (temperature >= 100.0f) {
 			SetDropletState (DropletState.Gas);
 		} else if (temperature > 0.0f) {
@@ -167,20 +169,24 @@ public class droplet : MonoBehaviour {
 		state = newState;
 		animator.SetInteger("dropletState", (int)state);
 		//TODO: setup state-specfic stuff here
+
 		Rigidbody2D rigidBody = GetComponent<Rigidbody2D>();
 
 		switch (state) {
 		case DropletState.Gas:
 			rigidBody.gravityScale = -(defaultGravityScale * .1f);
+			rigidBody.drag = 1;
+			rigidBody.mass = 1;
 			break;
 		case DropletState.Water:
 			rigidBody.gravityScale = defaultGravityScale;
+			rigidBody.drag = 1;
 			rigidBody.mass = 1;
 			break;
 		case DropletState.Ice:
-			rigidBody.gravityScale = defaultGravityScale * 2; //Maybe?  Ice is heaver than water...?
+			rigidBody.gravityScale = defaultGravityScale * 2;  // this should make his jumps a little bit weaker
 			rigidBody.drag = 0;
-			rigidBody.mass = 0.00000000001f;
+			rigidBody.mass = 0.9f;	// this should ensure that he floats
 			break;
 		};
 
