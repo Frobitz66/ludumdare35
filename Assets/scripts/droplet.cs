@@ -14,6 +14,7 @@ public class droplet : MonoBehaviour {
 	private float respawnTime; //The time at which we should respawn
 	private const float timeItTakesToRespawn = 3.0f; //The time from death that it takes us to respawn.
 	private Vector3 startingPosition;
+	private float defaultGravityScale = 1.0f;
 
 	public enum DropletState {
 		Ice = -1,
@@ -36,7 +37,11 @@ public class droplet : MonoBehaviour {
         animator = GetComponent<Animator>();
 		isAlive = true;
 		startingPosition = this.transform.position;
-        Camera.main.GetComponent<SmoothCamera>().target = gameObject;
+        //Camera.main.GetComponent<SmoothCamera>().target = gameObject;
+		var rigidBody = GetComponent<Rigidbody2D> ();
+		if (rigidBody)
+			defaultGravityScale = rigidBody.gravityScale;
+		state = DropletState.Water;
     }
 	
 	// Update is called once per frame
@@ -105,7 +110,15 @@ public class droplet : MonoBehaviour {
 			KillTheDroplet ();
 			return;
 		}
+
 		//TODO: Do state switching check here.
+		if (temperature >= 100.0f) {
+			SetDropletState (DropletState.Gas);
+		} else if (temperature > 0.0f) {
+			SetDropletState (DropletState.Water);
+		} else {
+			SetDropletState (DropletState.Ice);
+		}
 	}
 
     void Flip()
@@ -134,6 +147,9 @@ public class droplet : MonoBehaviour {
 	}
 
 	public void SetDropletState(DropletState newState){
+		if (state == newState)
+			return;
+		
 		state = newState;
 		animator.SetInteger("dropletState", (int)state);
 		//TODO: setup state-specfic stuff here
@@ -141,15 +157,23 @@ public class droplet : MonoBehaviour {
 
 		switch (state) {
 		case DropletState.Gas:
-			rigidBody.gravityScale = -1;
+			rigidBody.gravityScale = -(defaultGravityScale * .1f);
 			break;
 		case DropletState.Water:
-			rigidBody.gravityScale = 1;
+			rigidBody.gravityScale = defaultGravityScale;
+			rigidBody.mass = 1;
+			break;
+		case DropletState.Ice:
+			rigidBody.gravityScale = defaultGravityScale * 2; //Maybe?  Ice is heaver than water...?
+			rigidBody.drag = 0;
+			rigidBody.mass = 0.00000000001f;
+			break;
 		};
 
 	}
 
 	private void Respawn(){
+		SetDropletState (DropletState.Water);
 		isAlive = true;
 		animator.SetBool("isAlive", true);
 		temperature = 21.0f;

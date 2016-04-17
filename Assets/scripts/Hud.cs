@@ -37,7 +37,7 @@ public class Hud : MonoBehaviour {
 		float minAbs = Mathf.Abs (playerDroplet.GetMinTemperature ());
 		float entireSpan = minAbs + Mathf.Abs (playerDroplet.GetMaxTemperature ());
 		//...right?
-		return (minAbs + playerDroplet.GetTemperature ()) / playerDroplet.GetMaxTemperature ();
+		return (minAbs + playerDroplet.GetTemperature ()) / entireSpan;
 	}
 
 
