@@ -8,6 +8,7 @@ public class droplet : MonoBehaviour {
     public float JumpForce = 50;
     private float groundRadius = 1.5f;
     private Animator animator;
+	private int temperature = 21;
 
 
     private CircleCollider2D groundCheck;
@@ -51,4 +52,10 @@ public class droplet : MonoBehaviour {
         }
         //if (Inpu)
     }
+
+	public void IncrementTemperature(int delta){
+		temperature += delta;
+		//Do state switching check here.
+
+	}
 }
