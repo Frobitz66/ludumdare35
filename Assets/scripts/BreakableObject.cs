@@ -14,7 +14,7 @@ public class BreakableObject : MonoBehaviour {
 	
 	}
 
-	void OnCollisionEnter2D(Collider2D coll){
+	void OnCollisionEnter2D(Collision2D coll){
 		if (coll.gameObject.tag == "Player") {
 			var droplet = coll.gameObject.GetComponent<droplet>();
 			if (droplet != null) {
