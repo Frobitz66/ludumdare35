@@ -31,13 +31,24 @@ public class droplet : MonoBehaviour {
 	public delegate void LivesChanged(int lives);
 	public event LivesChanged OnLivesChanged;
 
+    void OnGUI()
+    {
+        GUIStyle style = new GUIStyle();
+        style.normal.textColor = Color.black;
+        GUILayout.Label("");
+        GUILayout.Label("");
+        GUILayout.Label("");
+        GUILayout.Label("");
+        GUILayout.Label("temp: " + temperature, style);
+    }
+
     // Use this for initialization
     void Start () {
         groundCheck = GetComponent<CircleCollider2D>();
         animator = GetComponent<Animator>();
 		isAlive = true;
 		startingPosition = this.transform.position;
-        //Camera.main.GetComponent<SmoothCamera>().target = gameObject;
+        Camera.main.GetComponent<SmoothCamera>().target = gameObject;
 		var rigidBody = GetComponent<Rigidbody2D> ();
 		if (rigidBody)
 			defaultGravityScale = rigidBody.gravityScale;

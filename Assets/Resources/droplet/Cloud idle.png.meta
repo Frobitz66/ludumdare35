@@ -1,9 +1,17 @@
 fileFormatVersion: 2
 guid: d58e46e826a6bf842ba0526852c2b01f
-timeCreated: 1460841739
+timeCreated: 1460868138
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: Cloud idle_0
+    21300002: Cloud idle_1
+    21300004: Cloud idle_2
+    21300006: Cloud idle_3
+    21300008: Cloud idle_4
+    21300010: Cloud idle_5
+    21300012: Cloud idle_6
+    21300014: Cloud idle_7
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -30,7 +38,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     filterMode: -1
-    aniso: -1
+    aniso: 16
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
@@ -38,7 +46,7 @@ TextureImporter:
   rGBM: 0
   compressionQuality: 50
   allowsAlphaSplitting: 0
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -49,7 +57,162 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: Cloud idle_0
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 53
+        width: 236
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 10.080002, y: 63.190002}
+        - {x: -38.92, y: 63.190002}
+        - {x: -85.92, y: 14.190002}
+        - {x: -85.92, y: -37.809998}
+        - {x: -69.92, y: -61.809998}
+        - {x: 57.08, y: -61.809998}
+        - {x: 87.08, y: -29.809998}
+        - {x: 87.08, y: 24.190002}
+        - {x: 79.08, y: 48.190002}
+    - name: Cloud idle_1
+      rect:
+        serializedVersion: 2
+        x: 382
+        y: 130
+        width: 236
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 49.860016, y: 63.4}
+        - {x: -28.139984, y: 63.4}
+        - {x: -55.139984, y: 54.4}
+        - {x: -86.139984, y: 5.4000015}
+        - {x: -86.139984, y: -61.6}
+        - {x: 77.860016, y: -61.6}
+        - {x: 87.860016, y: -52.6}
+        - {x: 87.860016, y: 45.4}
+        - {x: 85.860016, y: 58.4}
+    - name: Cloud idle_2
+      rect:
+        serializedVersion: 2
+        x: 727
+        y: 82
+        width: 236
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 30.210022, y: 63.36}
+        - {x: -41.789978, y: 63.36}
+        - {x: -85.78998, y: 19.36}
+        - {x: -85.78998, y: -37.64}
+        - {x: -69.78998, y: -61.64}
+        - {x: 55.210022, y: -61.64}
+        - {x: 87.21002, y: -28.64}
+        - {x: 87.21002, y: 35.36}
+        - {x: 81.21002, y: 54.36}
+    - name: Cloud idle_3
+      rect:
+        serializedVersion: 2
+        x: 1126
+        y: 91
+        width: 236
+        height: 171
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -44.01996, y: 63.43}
+        - {x: -85.01996, y: -0.5699997}
+        - {x: -85.01996, y: -47.57}
+        - {x: -49.01996, y: -62.57}
+        - {x: 57.98004, y: -62.57}
+        - {x: 87.98004, y: -29.57}
+        - {x: 87.98004, y: 48.43}
+        - {x: 36.98004, y: 63.43}
+    - name: Cloud idle_4
+      rect:
+        serializedVersion: 2
+        x: 1427
+        y: 1
+        width: 236
+        height: 173
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -24.789917, y: 64.729996}
+        - {x: -31.789917, y: 58.73}
+        - {x: -65.78992, y: 21.73}
+        - {x: -84.78992, y: 1.7299995}
+        - {x: -84.78992, y: -44.27}
+        - {x: -80.78992, y: -63.27}
+        - {x: 78.21008, y: -63.27}
+        - {x: 87.21008, y: -60.27}
+        - {x: 87.21008, y: 51.73}
+        - {x: 19.210083, y: 64.729996}
+    - name: Cloud idle_5
+      rect:
+        serializedVersion: 2
+        x: 1738
+        y: 62
+        width: 236
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -84.26001, y: -62.239998}
+        - {x: 87.73999, y: -62.239998}
+        - {x: 87.73999, y: 26.760002}
+        - {x: 79.73999, y: 45.760002}
+        - {x: 37.73999, y: 62.760002}
+        - {x: -59.26001, y: 62.760002}
+        - {x: -84.26001, y: 55.760002}
+    - name: Cloud idle_6
+      rect:
+        serializedVersion: 2
+        x: 2117
+        y: 82
+        width: 236
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -49.089966, y: 63.36}
+        - {x: -84.089966, y: 4.3600006}
+        - {x: -84.089966, y: -61.64}
+        - {x: 78.910034, y: -61.64}
+        - {x: 86.910034, y: -47.64}
+        - {x: 86.910034, y: 58.36}
+        - {x: 47.910034, y: 63.36}
+    - name: Cloud idle_7
+      rect:
+        serializedVersion: 2
+        x: 2482
+        y: 57
+        width: 236
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -37.139893, y: 63.11}
+        - {x: -83.13989, y: 42.11}
+        - {x: -83.13989, y: -40.89}
+        - {x: -79.13989, y: -52.89}
+        - {x: -62.139893, y: -61.89}
+        - {x: 75.86011, y: -61.89}
+        - {x: 87.86011, y: -55.89}
+        - {x: 87.86011, y: 63.11}
     outline: []
   spritePackingTag: 
   userData: 
