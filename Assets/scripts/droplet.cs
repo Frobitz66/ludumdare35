@@ -145,6 +145,7 @@ public class droplet : MonoBehaviour {
 			break;
 		case DropletState.Water:
 			rigidBody.gravityScale = 1;
+            break;
 		};
 
 	}
