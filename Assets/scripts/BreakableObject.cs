@@ -27,6 +27,8 @@ public class BreakableObject : MonoBehaviour {
 				if (animator != null) {
 					animator.SetBool ("isBroken", true);
 				}
+
+				Destroy (gameObject, 2.0f);
 			}
 		}
 	}
