@@ -14,7 +14,7 @@ public class heatsystem : MonoBehaviour {
 
 
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
 		timeSenseUpdate += Time.deltaTime;
 		if (timeSenseUpdate >= 1) {
 			//temp -= 1;
