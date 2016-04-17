@@ -82,7 +82,8 @@ public class droplet : MonoBehaviour {
 			return;
 		}
 
-        grounded = Physics2D.OverlapCircle(transform.position, groundRadius, whatIsGround);
+		grounded = groundCheck.IsTouchingLayers (whatIsGround);
+        //grounded = Physics2D.OverlapCircle(transform.position, groundRadius, whatIsGround);
         float move = Input.GetAxis("Horizontal");
         // anim.SetFloat("Speed", Mathf.Abs(move));
         if (move > 0 && !facingRight)

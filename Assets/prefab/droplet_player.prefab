@@ -14,6 +14,7 @@ GameObject:
   - 114: {fileID: 11484386}
   - 58: {fileID: 5860112}
   - 95: {fileID: 9558704}
+  - 61: {fileID: 6140036}
   m_Layer: 11
   m_Name: droplet_player
   m_TagString: Player
@@ -28,8 +29,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 123926}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.8250303, y: -2.550983, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalPosition: {x: -24.4, y: 6.4, z: 0}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -61,9 +62,23 @@ CircleCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_Offset: {x: -0.09, y: -1.23}
+  m_Offset: {x: -0.04, y: -1.23}
   serializedVersion: 2
-  m_Radius: 0.82787585
+  m_Radius: 0.86
+--- !u!61 &6140036
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 123926}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: -0.04, y: -0.06001043}
+  serializedVersion: 2
+  m_Size: {x: 1.83, y: 2.57}
 --- !u!61 &6189638
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -75,9 +90,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: -0.04, y: -0.060010433}
+  m_Offset: {x: -0.04, y: -0.06}
   serializedVersion: 2
-  m_Size: {x: 1.6601129, y: 2.8003073}
+  m_Size: {x: 2.06, y: 2.88}
 --- !u!95 &9558704
 Animator:
   serializedVersion: 3
