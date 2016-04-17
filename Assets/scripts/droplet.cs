@@ -40,6 +40,9 @@ public class droplet : MonoBehaviour {
 	public delegate void PlayerSpawned();
 	public event PlayerSpawned OnPlayerSpawned;
 
+	public delegate void GameOver();
+	public event GameOver OnGameOver;
+
     void OnGUI()
     {
         GUIStyle style = new GUIStyle();
@@ -50,6 +53,12 @@ public class droplet : MonoBehaviour {
         GUILayout.Label("");
         GUILayout.Label("temp: " + temperature, style);
     }
+
+	//Keep the player betweens levels.  After a game over, we will
+	//find and destroy the current player so that lives, etc, are reset.
+	void Awake(){
+		DontDestroyOnLoad (this.gameObject);
+	}
 
     // Use this for initialization
     void Start () {
@@ -68,7 +77,7 @@ public class droplet : MonoBehaviour {
 	void Update () {
 
 		if (!isAlive) {
-			if (Time.time >= respawnTime)
+			if (Time.time >= respawnTime  && respawnTime >= 0.0f)
 				Respawn ();
 			return;
 		}
@@ -166,6 +175,13 @@ public class droplet : MonoBehaviour {
 		isAlive = false;
 		animator.SetBool("isAlive", false);
 
+		if (Lives <= 0) {
+			respawnTime = -1.0f;
+			if (OnGameOver != null)
+				OnGameOver ();
+			return;
+		}
+
 		//TODO: 
 		//-Play death animation for current state.
 		respawnTime = Time.time + timeItTakesToRespawn;
@@ -215,5 +231,7 @@ public class droplet : MonoBehaviour {
 		this.transform.position = startingPosition;
 		if (OnPlayerSpawned != null)
 			OnPlayerSpawned ();
+
+		respawnTime = -1.0f;
 	}
 }
