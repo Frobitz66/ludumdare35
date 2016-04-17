@@ -31,6 +31,9 @@ public class droplet : MonoBehaviour {
 	public delegate void LivesChanged(int lives);
 	public event LivesChanged OnLivesChanged;
 
+	public delegate void StateChanged(DropletState newState);
+	public event StateChanged OnStateChanged;
+
     void OnGUI()
     {
         GUIStyle style = new GUIStyle();
@@ -187,6 +190,12 @@ public class droplet : MonoBehaviour {
 			break;
 		};
 
+		if (OnStateChanged != null)
+			OnStateChanged (state);
+	}
+
+	public DropletState GetDropletState(){
+		return state;
 	}
 
 	private void Respawn(){
