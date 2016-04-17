@@ -23,6 +23,8 @@ public class droplet : MonoBehaviour {
 
 	private DropletState state;
 
+    private bool facingRight = true;
+
     private CircleCollider2D groundCheck;
 
 	public delegate void LivesChanged(int lives);
@@ -34,6 +36,7 @@ public class droplet : MonoBehaviour {
         animator = GetComponent<Animator>();
 		isAlive = true;
 		startingPosition = this.transform.position;
+        Camera.main.GetComponent<SmoothCamera>().target = gameObject;
     }
 	
 	// Update is called once per frame
@@ -45,10 +48,17 @@ public class droplet : MonoBehaviour {
 			return;
 		}
 
-         grounded = Physics2D.OverlapCircle(transform.position, groundRadius, whatIsGround);
+        grounded = Physics2D.OverlapCircle(transform.position, groundRadius, whatIsGround);
         float move = Input.GetAxis("Horizontal");
         // anim.SetFloat("Speed", Mathf.Abs(move));
-
+        if (move > 0 && !facingRight)
+        {
+            Flip();
+        }
+        else if (move < 0 && facingRight)
+        {
+            Flip();
+        }
 
         if (grounded) // this if is so he can't move while jumping
         {
@@ -58,24 +68,19 @@ public class droplet : MonoBehaviour {
 
         if (GetComponent<Rigidbody2D>().velocity.x != 0)
         {
-            Debug.Log("walking");
             animator.SetBool("isWalking", true);
         }
         else
         {
-            Debug.Log("idling");
             animator.SetBool("isWalking", false);
         }
-
-
 
         if (grounded && Input.GetButtonDown("Jump"))
         {
             GetComponent<Rigidbody2D>().AddForce(new Vector2(0, JumpForce));
         }
-        //if (Inpu)
     }
-
+		
 	public float GetTemperature(){
 		return temperature;
 	}
@@ -91,7 +96,7 @@ public class droplet : MonoBehaviour {
 	public void IncrementTemperature(float delta){
 		if (!isAlive)
 			return;
-		
+
 		temperature += delta;
 
 		if (temperature >= GetMaxTemperature () || temperature <= GetMinTemperature ()) {
@@ -100,6 +105,15 @@ public class droplet : MonoBehaviour {
 		}
 		//TODO: Do state switching check here.
 	}
+
+    void Flip()
+    {
+        //Debug.Log("switching...");
+        facingRight = !facingRight;
+        Vector3 theScale = transform.localScale;
+        theScale.x *= -1;
+        transform.localScale = theScale;
+    }
 
 	public void KillTheDroplet(){
 		if (!isAlive)
