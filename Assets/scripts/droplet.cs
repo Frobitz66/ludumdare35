@@ -9,7 +9,7 @@ public class droplet : MonoBehaviour {
     private float groundRadius = 1.5f;
     private Animator animator;
 	private int temperature = 21;
-
+    private bool facingRight = true;
 
     private CircleCollider2D groundCheck;
 
@@ -25,7 +25,14 @@ public class droplet : MonoBehaviour {
          grounded = Physics2D.OverlapCircle(transform.position, groundRadius, whatIsGround);
         float move = Input.GetAxis("Horizontal");
         // anim.SetFloat("Speed", Mathf.Abs(move));
-
+        if (move > 0 && !facingRight)
+        {
+            Flip();
+        }
+        else if (move < 0 && facingRight)
+        {
+            Flip();
+        }
 
         if (grounded) // this if is so he can't move while jumping
         {
@@ -53,7 +60,16 @@ public class droplet : MonoBehaviour {
         //if (Inpu)
     }
 
-	public void IncrementTemperature(int delta){
+    void Flip()
+    {
+        //Debug.Log("switching...");
+        facingRight = !facingRight;
+        Vector3 theScale = transform.localScale;
+        theScale.x *= -1;
+        transform.localScale = theScale;
+    }
+
+    public void IncrementTemperature(int delta){
 		temperature += delta;
 		//Do state switching check here.
 
