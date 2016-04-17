@@ -7,6 +7,7 @@ public class droplet : MonoBehaviour {
     public LayerMask whatIsGround;
     public float JumpForce = 50;
     private float groundRadius = 1.5f;
+    private Animator animator;
 
 
     private CircleCollider2D groundCheck;
@@ -14,12 +15,13 @@ public class droplet : MonoBehaviour {
     // Use this for initialization
     void Start () {
         groundCheck = GetComponent<CircleCollider2D>();
-	}
+        animator = GetComponent<Animator>();
+    }
 	
 	// Update is called once per frame
 	void Update () {
 
-        grounded = Physics2D.OverlapCircle(transform.position, groundRadius, whatIsGround);
+         grounded = Physics2D.OverlapCircle(transform.position, groundRadius, whatIsGround);
         float move = Input.GetAxis("Horizontal");
         // anim.SetFloat("Speed", Mathf.Abs(move));
 
@@ -28,6 +30,19 @@ public class droplet : MonoBehaviour {
         {
             GetComponent<Rigidbody2D>().velocity = new Vector2(move * maxSpeed, GetComponent<Rigidbody2D>().velocity.y);
         }
+
+
+        if (GetComponent<Rigidbody2D>().velocity.x != 0)
+        {
+            Debug.Log("walking");
+            animator.SetBool("isWalking", true);
+        }
+        else
+        {
+            Debug.Log("idling");
+            animator.SetBool("isWalking", false);
+        }
+
 
 
         if (grounded && Input.GetButtonDown("Jump"))
