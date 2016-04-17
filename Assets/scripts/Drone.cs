@@ -17,6 +17,7 @@ public class Drone : MonoBehaviour {
 	// Use this for initialization
 	void Start () { 
 		ourRigidBody = GetComponent<Rigidbody2D> ();
+		SetSpriteDirection (Direction);
 	}
 	
 	// Update is called once per frame
@@ -37,6 +38,13 @@ public class Drone : MonoBehaviour {
 		} else {
 			//Else change direction
 			Direction = (Direction == DroneDirection.Left) ? DroneDirection.Right : DroneDirection.Left;
+			SetSpriteDirection (Direction);
 		}
+	}
+
+	private void SetSpriteDirection(DroneDirection direction){
+		Vector3 theScale = transform.localScale;
+		theScale.x = (float)(((int)direction) * Mathf.Abs(theScale.x));
+		transform.localScale = theScale;
 	}
 }

@@ -11,6 +11,7 @@ public class Hud : MonoBehaviour {
 	private droplet playerDroplet = null;
 	public Image gradientImage;
 	public Text deathMessageText;
+	public Canvas GameOverHUD;
 
 	// Use this for initialization
 	void Start () {
@@ -20,9 +21,13 @@ public class Hud : MonoBehaviour {
 			playerDroplet.OnLivesChanged += this.LivesChanged;
 			playerDroplet.OnPlayerKilled += this.PlayerKilled;
 			playerDroplet.OnPlayerSpawned += this.PlayerSpawned;
+			playerDroplet.OnGameOver += this.GameOver;
 		}
 		if (deathMessageText != null) {
 			deathMessageText.enabled = false;
+		}
+		if (GameOverHUD != null) {
+			GameOverHUD.enabled = false;
 		}
 	}
 	
@@ -72,6 +77,13 @@ public class Hud : MonoBehaviour {
 		deathMessageText.enabled = false;
 	}
 
+	public void GameOver(){
+		if (GameOverHUD == null)
+			return;
+
+		GameOverHUD.enabled = true;
+	}
+
 	void OnDisable(){
 		Cleanup ();
 	}
@@ -85,6 +97,7 @@ public class Hud : MonoBehaviour {
 			playerDroplet.OnLivesChanged -= this.LivesChanged;
 			playerDroplet.OnPlayerKilled -= this.PlayerKilled;
 			playerDroplet.OnPlayerSpawned -= this.PlayerSpawned;
+			playerDroplet.OnGameOver -= this.GameOver;
 			playerDroplet = null;
 		}
 	}
