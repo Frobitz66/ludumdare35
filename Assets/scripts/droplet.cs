@@ -60,7 +60,8 @@ public class droplet : MonoBehaviour {
             Flip();
         }
 
-        if (grounded) // this if is so he can't move while jumping
+		// Can only move when in gas state or not jumping
+		if (state == DropletState.Gas || grounded) 
         {
             GetComponent<Rigidbody2D>().velocity = new Vector2(move * maxSpeed, GetComponent<Rigidbody2D>().velocity.y);
         }
@@ -75,7 +76,8 @@ public class droplet : MonoBehaviour {
             animator.SetBool("isWalking", false);
         }
 
-        if (grounded && Input.GetButtonDown("Jump"))
+		//Can't jump while in gas state
+		if (state != DropletState.Gas && grounded && Input.GetButtonDown("Jump"))
         {
             GetComponent<Rigidbody2D>().AddForce(new Vector2(0, JumpForce));
         }
@@ -135,6 +137,16 @@ public class droplet : MonoBehaviour {
 		state = newState;
 		animator.SetInteger("dropletState", (int)state);
 		//TODO: setup state-specfic stuff here
+		Rigidbody2D rigidBody = GetComponent<Rigidbody2D>();
+
+		switch (state) {
+		case DropletState.Gas:
+			rigidBody.gravityScale = -1;
+			break;
+		case DropletState.Water:
+			rigidBody.gravityScale = 1;
+		};
+
 	}
 
 	private void Respawn(){
