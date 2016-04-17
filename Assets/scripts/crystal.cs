@@ -25,7 +25,7 @@ public class crystal : MonoBehaviour {
 	void Update () {
 		if (playerDroplet != null) {
 			float increment = TemperatureChangePerSecond * Time.deltaTime;
-			playerDroplet.IncrementTemperature (increment);
+			playerDroplet.IncrementTemperature (increment, "Temperature Crystal");
 		}
 	}
 
