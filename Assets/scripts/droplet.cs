@@ -180,7 +180,10 @@ public class droplet : MonoBehaviour {
 			rigidBody.mass = 0.00000000001f;
 			break;
 		};
+	}
 
+	public DropletState GetDropletState(){
+		return state;
 	}
 
 	private void Respawn(){
