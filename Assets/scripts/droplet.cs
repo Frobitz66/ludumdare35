@@ -28,11 +28,17 @@ public class droplet : MonoBehaviour {
 
     private CircleCollider2D groundCheck;
 
+	public delegate void PlayerKilled(string killer);
+	public event PlayerKilled OnPlayerKilled;
+
 	public delegate void LivesChanged(int lives);
 	public event LivesChanged OnLivesChanged;
 
 	public delegate void StateChanged(DropletState newState);
 	public event StateChanged OnStateChanged;
+
+	public delegate void PlayerSpawned();
+	public event PlayerSpawned OnPlayerSpawned;
 
     void OnGUI()
     {
@@ -116,14 +122,14 @@ public class droplet : MonoBehaviour {
 	}
 
 	// Change the Temperature of Droplet (the name is misleading)
-	public void IncrementTemperature(float delta){
+	public void IncrementTemperature(float delta, string incrementerName){
 		if (!isAlive)
 			return;
 
 		temperature += delta;
 
 		if (temperature >= GetMaxTemperature () || temperature <= GetMinTemperature ()) {
-			KillTheDroplet ();
+			KillTheDroplet (incrementerName);
 			return;
 		}
 
@@ -146,13 +152,16 @@ public class droplet : MonoBehaviour {
         transform.localScale = theScale;
     }
 
-	public void KillTheDroplet(){
+	public void KillTheDroplet(string killerName){
 		if (!isAlive)
 			return;
 		
 		Lives--;
 		if (OnLivesChanged != null)
 			OnLivesChanged (Lives);
+
+		if (OnPlayerKilled != null)
+			OnPlayerKilled (killerName);
 
 		isAlive = false;
 		animator.SetBool("isAlive", false);
@@ -199,10 +208,12 @@ public class droplet : MonoBehaviour {
 	}
 
 	private void Respawn(){
-		SetDropletState (DropletState.Water);
 		isAlive = true;
 		animator.SetBool("isAlive", true);
+		SetDropletState (DropletState.Water);
 		temperature = 21.0f;
 		this.transform.position = startingPosition;
+		if (OnPlayerSpawned != null)
+			OnPlayerSpawned ();
 	}
 }
