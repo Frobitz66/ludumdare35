@@ -10,6 +10,7 @@ public class Hud : MonoBehaviour {
 	public GameObject life3;
 	private droplet playerDroplet = null;
 	public Image gradientImage;
+	public Text deathMessageText;
 
 	// Use this for initialization
 	void Start () {
@@ -17,6 +18,11 @@ public class Hud : MonoBehaviour {
 		if (player != null) {
 			playerDroplet = player.GetComponent<droplet> ();
 			playerDroplet.OnLivesChanged += this.LivesChanged;
+			playerDroplet.OnPlayerKilled += this.PlayerKilled;
+			playerDroplet.OnPlayerSpawned += this.PlayerSpawned;
+		}
+		if (deathMessageText != null) {
+			deathMessageText.enabled = false;
 		}
 	}
 	
@@ -53,6 +59,19 @@ public class Hud : MonoBehaviour {
 		}
 	}
 
+	public void PlayerKilled(string killerName){
+		if (deathMessageText == null)
+			return;
+		deathMessageText.text = string.Format("You were killed by {0}", killerName);
+		deathMessageText.enabled = true;
+	}
+
+	public void PlayerSpawned(){
+		if (deathMessageText == null)
+			return;
+		deathMessageText.enabled = false;
+	}
+
 	void OnDisable(){
 		Cleanup ();
 	}
@@ -64,6 +83,8 @@ public class Hud : MonoBehaviour {
 	private void Cleanup(){
 		if (playerDroplet != null) {
 			playerDroplet.OnLivesChanged -= this.LivesChanged;
+			playerDroplet.OnPlayerKilled -= this.PlayerKilled;
+			playerDroplet.OnPlayerSpawned -= this.PlayerSpawned;
 			playerDroplet = null;
 		}
 	}

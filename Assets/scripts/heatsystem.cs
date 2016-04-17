@@ -29,7 +29,7 @@ public class heatsystem : MonoBehaviour {
 			//Either increment by the delta percentage, or by the last tiny increment
 			float proposedIncrement = ((AbsoluteTemperatureChangePerSecond * direction) * Time.deltaTime);
 			float increment = Mathf.Min (Mathf.Abs(difference), Mathf.Abs(proposedIncrement)) * direction;
-			playerDroplet.IncrementTemperature (increment);
+			playerDroplet.IncrementTemperature (increment, "Ambient Heat System");
 		}
 	}
 
