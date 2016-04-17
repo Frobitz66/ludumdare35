@@ -196,10 +196,10 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: d67f6d98052ba6c439f22c754e0d50d4, type: 3}
-  m_Type: 0
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
-  m_FillMethod: 4
+  m_FillMethod: 1
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
@@ -281,7 +281,7 @@ MonoBehaviour:
   life1: {fileID: 159608}
   life2: {fileID: 143912}
   life3: {fileID: 117464}
-  lives: 3
+  gradientImage: {fileID: 11431346}
 --- !u!114 &11465320
 MonoBehaviour:
   m_ObjectHideFlags: 1
