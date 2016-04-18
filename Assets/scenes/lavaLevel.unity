@@ -1028,6 +1028,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11482060, guid: 37107bbf04ae0f94eb6661d87b0a64cc, type: 2}
+      propertyPath: LevelAmbientSound
+      value: 
+      objectReference: {fileID: 8300000, guid: d1a9111d8bbaf914c9e2efd88850589d, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 37107bbf04ae0f94eb6661d87b0a64cc, type: 2}
   m_IsPrefabParent: 0
@@ -8038,7 +8042,7 @@ MonoBehaviour:
   m_CancelButton: Cancel
   m_InputActionsPerSecond: 10
   m_RepeatDelay: 0.5
-  m_ForceModuleActive: 0
+  m_ForceModuleActive: 1
 --- !u!114 &1199173912
 MonoBehaviour:
   m_ObjectHideFlags: 0

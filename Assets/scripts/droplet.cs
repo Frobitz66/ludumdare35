@@ -251,12 +251,30 @@ public class droplet : MonoBehaviour {
         this.startingPosition = spawnPoint.transform.position;
     }
 
-	private void Respawn(){
+	public void Respawn(){
 		isAlive = true;
 		animator.SetBool("isAlive", true);
 		SetDropletState (DropletState.Water);
 		temperature = 21.0f;
-		this.transform.position = startingPosition;
+
+		if(spawnPoint == null){
+			var spawnPointScript = GameObject.FindObjectOfType<SpawnPoint>();
+			if(spawnPoint == null){
+				Debug.Log("Unable to find spawn point in level!  Picking arbitrary place.");
+				var crystals = GameObject.FindObjectsOfType<crystal>();
+				if(crystals.Length > 0){
+					spawnPoint = crystals[0].gameObject;
+				}
+				else{
+					//well, we're screwed.
+				}
+			}
+			else{
+				spawnPoint = spawnPointScript.gameObject;
+			}
+		}
+
+		this.transform.position = (spawnPoint == null) ? startingPosition : spawnPoint.transform.position;
 		if (OnPlayerSpawned != null)
 			OnPlayerSpawned ();
 

@@ -136,6 +136,7 @@ MonoBehaviour:
   DefaultSprite: {fileID: 21300000, guid: 755ddcad4c81b46e28f9bad43b64131a, type: 3}
   HoverSprite: {fileID: 21300000, guid: dda7313367aff4b89b781bc35bbe93e8, type: 3}
   LevelToLoad: Lab Level
+  DestroyPlayer: 1
 --- !u!114 &163080721
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -843,6 +844,10 @@ Prefab:
       propertyPath: m_SortingOrder
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 11482060, guid: 37107bbf04ae0f94eb6661d87b0a64cc, type: 2}
+      propertyPath: LevelAmbientSound
+      value: 
+      objectReference: {fileID: 8300000, guid: ba8fe7a6f2eaf4d468a5b5a60a7dff68, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 37107bbf04ae0f94eb6661d87b0a64cc, type: 2}
   m_IsPrefabParent: 0

@@ -11,9 +11,16 @@ public class SwitchLevel : MonoBehaviour {
 	{
 		if (SwitchOnClick)
 			return;
-		
-		GameState.droplet = coll.gameObject;
-		SceneManager.LoadScene(LevelToSwitchTo);
+
+		SwitchLevel.SwitchToLevel(coll.gameObject, LevelToSwitchTo);
+	}
+
+	public static void SwitchToLevel(GameObject playerObject, string level)
+	{
+		GameState.SetPlayerDroplet(playerObject);
+		AudioSource[] audios = GameState.GetPlayerDroplet().gameObject.GetComponents<AudioSource>();
+		audios[0].Stop();
+		SceneManager.LoadScene(level);
 	}
 
 	void OnMouseOver()
@@ -21,7 +28,6 @@ public class SwitchLevel : MonoBehaviour {
 		if (Input.GetMouseButtonDown(0) && SwitchOnClick)
 		{
 			SceneManager.LoadScene(LevelToSwitchTo);    
-
 		}
 	}
 }

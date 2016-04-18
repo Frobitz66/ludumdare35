@@ -4,9 +4,13 @@ using System.Collections;
 public class LoadLevelButtonState : ButtonState{
 
 	public string LevelToLoad;
+	public bool DestroyPlayer = false;
 	public override void Click (){
-		var player = GameObject.FindGameObjectWithTag ("Player");
-		DestroyObject (player);
+		if(DestroyPlayer){
+			var player = GameState.GetPlayerDroplet();
+			if(player != null)
+				DestroyObject (player.gameObject);
+		}
 		UnityEngine.SceneManagement.SceneManager.LoadScene (LevelToLoad);
 	}
 }

@@ -1,6 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
-using System.Collections;
 
 public class TriggerGameEnd : MonoBehaviour {
 
@@ -12,7 +10,7 @@ public class TriggerGameEnd : MonoBehaviour {
 		if (GameEndCanvas != null)
 			GameEndCanvas.enabled = false;
 		
-		playerDroplet = (GameState.droplet != null) ? GameState.droplet.GetComponent<droplet> () : null;
+		playerDroplet = GameState.GetPlayerDroplet();
 		if (playerDroplet == null) {
 			var player = GameObject.FindGameObjectWithTag ("Player");
 			playerDroplet = player.GetComponent<droplet> ();

@@ -2010,7 +2010,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 462694, guid: 02b06dfe1b3769d45b2656e401c2080c, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 462694, guid: 02b06dfe1b3769d45b2656e401c2080c, type: 2}
       propertyPath: m_LocalScale.y
@@ -2096,7 +2096,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 459922, guid: 36780cebaaf35b6458c98246ea35d6a6, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 36780cebaaf35b6458c98246ea35d6a6, type: 2}
@@ -3766,7 +3766,7 @@ MonoBehaviour:
   m_CancelButton: Cancel
   m_InputActionsPerSecond: 10
   m_RepeatDelay: 0.5
-  m_ForceModuleActive: 0
+  m_ForceModuleActive: 1
 --- !u!114 &1001078756
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5156,8 +5156,12 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 478768, guid: 37107bbf04ae0f94eb6661d87b0a64cc, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 11482060, guid: 37107bbf04ae0f94eb6661d87b0a64cc, type: 2}
+      propertyPath: LevelAmbientSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 0f048d20252eb71429f78e0e6f76f57d, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 37107bbf04ae0f94eb6661d87b0a64cc, type: 2}
   m_IsPrefabParent: 0
@@ -6537,7 +6541,7 @@ Transform:
   - {fileID: 1174874246}
   - {fileID: 1517240021}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 7
 --- !u!1001 &1719505928
 Prefab:
   m_ObjectHideFlags: 0
@@ -7190,7 +7194,7 @@ Transform:
   - {fileID: 381121424}
   - {fileID: 766450561}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
 --- !u!1001 &1837634222
 Prefab:
   m_ObjectHideFlags: 0

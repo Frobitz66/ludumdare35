@@ -3,12 +3,18 @@ using System.Collections;
 
 public class SpawnPoint : MonoBehaviour {
 
+	public AudioClip LevelAmbientSound;
+
 	// Use this for initialization
 	void Start () {
-		if (GameState.droplet != null)
+		var playerDroplet = GameState.GetPlayerDroplet();
+		if (playerDroplet != null)
 		{
 			Debug.Log("Setting droplet start pos: " + GetComponent<Transform>().position);
-            GameState.droplet.GetComponent<droplet>().SpawnAt(this.gameObject);
+			AudioSource[] audios = playerDroplet.gameObject.GetComponents<AudioSource>();
+			audios[0].clip = LevelAmbientSound;
+			audios[0].Play();
+			playerDroplet.SpawnAt(this.gameObject);
 		}
 	}
 }
