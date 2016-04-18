@@ -47,24 +47,26 @@ public class droplet : MonoBehaviour {
 
     void OnGUI()
     {
-        GUIStyle style = new GUIStyle();
-        style.normal.textColor = Color.black;
-        GUILayout.Label("");
-        GUILayout.Label("");
-        GUILayout.Label("");
-        GUILayout.Label("");
-        GUILayout.Label("temp: " + temperature, style);
-        GUILayout.Label("state: " + state, style);
+        //GUIStyle style = new GUIStyle();
+        //style.normal.textColor = Color.black;
+        //GUILayout.Label("");
+        //GUILayout.Label("");
+        //GUILayout.Label("");
+        //GUILayout.Label("");
+        //GUILayout.Label("temp: " + temperature, style);
+        //GUILayout.Label("state: " + state, style);
     }
 
 	//Keep the player betweens levels.  After a game over, we will
 	//find and destroy the current player so that lives, etc, are reset.
 	void Awake(){
 		DontDestroyOnLoad (this.gameObject);
-	}
+
+    }
 
     // Use this for initialization
     void Start () {
+
         groundCheck = GetComponent<CircleCollider2D>();
         animator = GetComponent<Animator>();
 		isAlive = true;
@@ -111,6 +113,7 @@ public class droplet : MonoBehaviour {
         if (GetComponent<Rigidbody2D>().velocity.x != 0)
         {
             animator.SetBool("isWalking", true);
+
         }
         else
         {

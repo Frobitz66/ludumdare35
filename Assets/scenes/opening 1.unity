@@ -164,6 +164,34 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11431046, guid: 564740d98a4d08946842bbf506a076e6, type: 2}
+      propertyPath: m_Text
+      value: 'There once was a droplet who lived in the ocean with friends and family. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 11431046, guid: 564740d98a4d08946842bbf506a076e6, type: 2}
+      propertyPath: m_Color.r
+      value: 0.03676468
+      objectReference: {fileID: 0}
+    - target: {fileID: 11431046, guid: 564740d98a4d08946842bbf506a076e6, type: 2}
+      propertyPath: m_Color.g
+      value: 0.03226418
+      objectReference: {fileID: 0}
+    - target: {fileID: 11431046, guid: 564740d98a4d08946842bbf506a076e6, type: 2}
+      propertyPath: m_Color.b
+      value: 0.017571354
+      objectReference: {fileID: 0}
+    - target: {fileID: 22460296, guid: 564740d98a4d08946842bbf506a076e6, type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 273.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 22460296, guid: 564740d98a4d08946842bbf506a076e6, type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 29.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 103410, guid: 564740d98a4d08946842bbf506a076e6, type: 2}
+      propertyPath: m_Name
+      value: Canvas1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 564740d98a4d08946842bbf506a076e6, type: 2}
   m_IsPrefabParent: 0
@@ -452,7 +480,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2036677863}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.47, y: -3.82, z: 0}
+  m_LocalPosition: {x: 5, y: -3.82, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

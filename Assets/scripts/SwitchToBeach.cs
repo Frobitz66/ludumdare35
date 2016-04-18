@@ -7,9 +7,11 @@ public class SwitchToBeach : MonoBehaviour {
     {
         GameState.droplet = coll.gameObject;
         AudioClip clip = Resources.Load("sound/ld35_end_v1") as AudioClip;
-        GameState.droplet.GetComponent<AudioSource>().Stop();
-        GameState.droplet.GetComponent<AudioSource>().clip = clip;
-        GameState.droplet.GetComponent<AudioSource>().Play();
+        AudioSource[] audios = GameState.droplet.GetComponents<AudioSource>();
+
+        audios[0].Stop();
+        audios[0].clip = clip;
+        audios[0].Play();
         SceneManager.LoadScene("beach");
 
     }

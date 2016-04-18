@@ -164,21 +164,29 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 11431046, guid: 564740d98a4d08946842bbf506a076e6, type: 2}
-      propertyPath: m_Text
-      value: '   Droplet feared he would never go home. '
+    - target: {fileID: 22460296, guid: 564740d98a4d08946842bbf506a076e6, type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 133.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 22460296, guid: 564740d98a4d08946842bbf506a076e6, type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 103.77
       objectReference: {fileID: 0}
     - target: {fileID: 11431046, guid: 564740d98a4d08946842bbf506a076e6, type: 2}
       propertyPath: m_Color.r
-      value: 0.6838235
+      value: 0.08823532
       objectReference: {fileID: 0}
     - target: {fileID: 11431046, guid: 564740d98a4d08946842bbf506a076e6, type: 2}
       propertyPath: m_Color.g
-      value: 0.56356496
+      value: 0.07210956
       objectReference: {fileID: 0}
     - target: {fileID: 11431046, guid: 564740d98a4d08946842bbf506a076e6, type: 2}
       propertyPath: m_Color.b
-      value: 0.17095588
+      value: 0.019463671
+      objectReference: {fileID: 0}
+    - target: {fileID: 103410, guid: 564740d98a4d08946842bbf506a076e6, type: 2}
+      propertyPath: m_Name
+      value: Canvas5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 564740d98a4d08946842bbf506a076e6, type: 2}
@@ -383,7 +391,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1418024929}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.47, y: -3.82, z: 0}
+  m_LocalPosition: {x: 5, y: -3.82, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
