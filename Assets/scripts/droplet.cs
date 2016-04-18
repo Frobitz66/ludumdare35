@@ -52,6 +52,7 @@ public class droplet : MonoBehaviour {
         GUILayout.Label("");
         GUILayout.Label("");
         GUILayout.Label("temp: " + temperature, style);
+        GUILayout.Label("state: " + state, style);
     }
 
 	//Keep the player betweens levels.  After a game over, we will
