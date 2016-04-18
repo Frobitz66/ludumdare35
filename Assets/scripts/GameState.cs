@@ -6,7 +6,7 @@ using System.Collections;
 public static class GameState
 {
     public static GameObject droplet = null;
-
+    public static GameObject introMusic = null;
 
 }
 
