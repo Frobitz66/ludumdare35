@@ -30,7 +30,7 @@ public class crystal : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D col){
-		Debug.Log ("TriggerEnter2D: " + col.name);
+		//Debug.Log ("TriggerEnter2D: " + col.name);
 		if (col.gameObject.tag == "Player"){
 			var droplet = col.gameObject.GetComponent<droplet>();
 			if (droplet != null) {
@@ -41,7 +41,7 @@ public class crystal : MonoBehaviour {
 	}
 
 	void OnTriggerExit2D(Collider2D col){
-		Debug.Log ("TriggerExit2D: " + col.name);
+		//Debug.Log ("TriggerExit2D: " + col.name);
 		if (col.gameObject.tag == "Player"){
 			if (col.gameObject == playerGameObject) {
 				playerGameObject = null;

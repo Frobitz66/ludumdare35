@@ -17,13 +17,13 @@ public class Hud : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-		var player = GameObject.FindGameObjectWithTag ("Player");
-		if (player != null) {
-			playerDroplet = player.GetComponent<droplet> ();
+		playerDroplet = GameState.GetPlayerDroplet();
+		if (playerDroplet != null) {
 			playerDroplet.OnLivesChanged += this.LivesChanged;
 			playerDroplet.OnPlayerKilled += this.PlayerKilled;
 			playerDroplet.OnPlayerSpawned += this.PlayerSpawned;
 			playerDroplet.OnGameOver += this.GameOver;
+			LivesChanged(playerDroplet.Lives);
 		}
 		if (deathMessageText != null) {
 			deathMessageText.enabled = false;
@@ -47,11 +47,11 @@ public class Hud : MonoBehaviour {
             {
                 yield return new WaitForSeconds(0.3f);
                 dangerIce.enabled = !dangerIce.enabled;
-                Debug.Log("danger ice");
+                //Debug.Log("danger ice");
             }
             else
             {
-                Debug.Log("out of danger ice");
+                //Debug.Log("out of danger ice");
                 dangerIce.enabled = false;
                 break;
             }
@@ -73,11 +73,11 @@ public class Hud : MonoBehaviour {
             {
                 yield return new WaitForSeconds(0.3f);
                 dangerGas.enabled = !dangerGas.enabled;
-                Debug.Log("danger gas");
+                //Debug.Log("danger gas");
             }
             else
             {
-                Debug.Log("out of danger gas");
+                //Debug.Log("out of danger gas");
                 dangerGas.enabled = false;
                 break;
             }
@@ -86,7 +86,7 @@ public class Hud : MonoBehaviour {
     }
 
         // Update is called once per frame
-        void Update () {
+    void Update () {
 		if (playerDroplet == null)
 			return;
 
