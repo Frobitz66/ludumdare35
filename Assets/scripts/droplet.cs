@@ -15,6 +15,7 @@ public class droplet : MonoBehaviour {
 	private const float timeItTakesToRespawn = 3.0f; //The time from death that it takes us to respawn.
 	private Vector3 startingPosition;
 	private float defaultGravityScale = 1.0f;
+	private bool isTouchingWater = false;
 
 	public enum DropletState {
 		Ice = -1,
@@ -83,6 +84,9 @@ public class droplet : MonoBehaviour {
 		}
 
 		grounded = groundCheck.IsTouchingLayers (whatIsGround);
+		if (state == DropletState.Ice && !grounded) {
+			grounded = isTouchingWater;
+		} 
         //grounded = Physics2D.OverlapCircle(transform.position, groundRadius, whatIsGround);
         float move = Input.GetAxis("Horizontal");
         // anim.SetFloat("Speed", Mathf.Abs(move));
@@ -234,5 +238,15 @@ public class droplet : MonoBehaviour {
 			OnPlayerSpawned ();
 
 		respawnTime = -1.0f;
+	}
+
+	void OnTriggerEnter2D(Collider2D coll){
+		if (coll.gameObject.layer == LayerMask.NameToLayer ("Water"))
+			isTouchingWater = true;
+	}
+
+	void OnTriggerExit2D(Collider2D coll){
+		if (coll.gameObject.layer == LayerMask.NameToLayer ("Water"))
+			isTouchingWater = false;
 	}
 }
