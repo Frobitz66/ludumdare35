@@ -8,6 +8,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/scenes/title.unity
   - enabled: 1
+    path: Assets/scenes/jungle.unity
+  - enabled: 1
+    path: Assets/scenes/Lab Level.unity
+  - enabled: 1
+    path: Assets/scenes/lavaLevel.unity
+  - enabled: 1
     path: Assets/scenes/opening 1.unity
   - enabled: 1
     path: Assets/scenes/opening 2.unity
@@ -19,11 +25,5 @@ EditorBuildSettings:
     path: Assets/scenes/opening 5.unity
   - enabled: 1
     path: Assets/scenes/opening 6.unity
-  - enabled: 1
-    path: Assets/scenes/Lab Level.unity
-  - enabled: 1
-    path: Assets/scenes/jungle.unity
-  - enabled: 1
-    path: Assets/scenes/lavaLevel.unity
   - enabled: 1
     path: Assets/scenes/beach.unity

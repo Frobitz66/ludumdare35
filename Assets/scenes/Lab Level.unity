@@ -338,7 +338,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22458882, guid: f3abb97d8ab2a48f48975d66cf047c24, type: 2}
       propertyPath: m_RootOrder
-      value: 10
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 22458882, guid: f3abb97d8ab2a48f48975d66cf047c24, type: 2}
       propertyPath: m_AnchoredPosition.x
@@ -1649,11 +1649,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 447862, guid: afd444e01f7a00b46ac7f723c2216da8, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -24.2
+      value: -24.02
       objectReference: {fileID: 0}
     - target: {fileID: 447862, guid: afd444e01f7a00b46ac7f723c2216da8, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 6.7
+      value: 6.87
       objectReference: {fileID: 0}
     - target: {fileID: 447862, guid: afd444e01f7a00b46ac7f723c2216da8, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1677,15 +1677,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 447862, guid: afd444e01f7a00b46ac7f723c2216da8, type: 2}
       propertyPath: m_RootOrder
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 447862, guid: afd444e01f7a00b46ac7f723c2216da8, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 447862, guid: afd444e01f7a00b46ac7f723c2216da8, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 0.2
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: afd444e01f7a00b46ac7f723c2216da8, type: 2}
@@ -2409,7 +2401,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 429636, guid: dd53dfbc5d4f81b4b8e1768c906cd7e2, type: 2}
       propertyPath: m_RootOrder
-      value: 9
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 11454384, guid: dd53dfbc5d4f81b4b8e1768c906cd7e2, type: 2}
       propertyPath: RoomTemperature
