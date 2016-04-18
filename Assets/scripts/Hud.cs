@@ -12,9 +12,11 @@ public class Hud : MonoBehaviour {
 	public Image gradientImage;
 	public Text deathMessageText;
 	public Canvas GameOverHUD;
+    public Image dangerGas;
+    public Image dangerIce;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 		var player = GameObject.FindGameObjectWithTag ("Player");
 		if (player != null) {
 			playerDroplet = player.GetComponent<droplet> ();
@@ -30,22 +32,73 @@ public class Hud : MonoBehaviour {
 			GameOverHUD.enabled = false;
 		}
 	}
-	
-	// Update is called once per frame
-	void Update () {
+
+    IEnumerator danger_ice()
+    {
+        float minWarning = playerDroplet.GetWarningTemperatureMin();
+        float maxWarning = playerDroplet.GetWarningTemperatureMax();
+
+        dangerIce.enabled = true;
+        while (true)
+        {
+
+            float currentTemp = playerDroplet.GetTemperature();
+            if (currentTemp <= minWarning || currentTemp >= maxWarning)
+            {
+                yield return new WaitForSeconds(0.3f);
+                dangerIce.enabled = !dangerIce.enabled;
+                Debug.Log("danger ice");
+            }
+            else
+            {
+                Debug.Log("out of danger ice");
+                dangerIce.enabled = false;
+                break;
+            }
+        }
+
+    }
+
+    IEnumerator danger_gas()
+    {
+        float minWarning = playerDroplet.GetWarningTemperatureMin();
+        float maxWarning = playerDroplet.GetWarningTemperatureMax();
+
+        dangerGas.enabled = true;
+        while (true)
+        {
+
+            float currentTemp = playerDroplet.GetTemperature();
+            if (currentTemp <= minWarning || currentTemp >= maxWarning)
+            {
+                yield return new WaitForSeconds(0.3f);
+                dangerGas.enabled = !dangerGas.enabled;
+                Debug.Log("danger gas");
+            }
+            else
+            {
+                Debug.Log("out of danger gas");
+                dangerGas.enabled = false;
+                break;
+            }
+        }
+        
+    }
+
+        // Update is called once per frame
+        void Update () {
 		if (playerDroplet == null)
 			return;
 
 		if (gradientImage == null)
 			return;
 
-		float minWarning = playerDroplet.GetWarningTemperatureMin ();
-		float maxWarning = playerDroplet.GetWarningTemperatureMax ();
+        float minWarning = playerDroplet.GetWarningTemperatureMin();
+        float maxWarning = playerDroplet.GetWarningTemperatureMax();
 
-		float currentTemp = playerDroplet.GetTemperature ();
-
-		//Are we in danger of dying?
-		if (currentTemp <= minWarning || currentTemp >= maxWarning) {
+        float currentTemp = playerDroplet.GetTemperature();
+        //Are we in danger of dying?
+        if (currentTemp <= minWarning || currentTemp >= maxWarning) {
 			//If this is true, then you show the sprite at the lower end of the gauge.
 			//If not, then show it at the upper end.  If you want to do that sort of thing.
 			bool showAtLowerEnd = (currentTemp <= minWarning);
@@ -54,10 +107,12 @@ public class Hud : MonoBehaviour {
 			switch (playerDroplet.GetDropletState ()) {
 			case droplet.DropletState.Gas:
 				//Set warning sign for gas here
+                StartCoroutine(danger_gas());
 				break;
 			case droplet.DropletState.Ice:
-				//Set warning sign for ice here
-				break;
+                //Set warning sign for ice here
+                StartCoroutine(danger_ice());
+                break;
 			case droplet.DropletState.Water:
 				//Set warning sign for water here
 				break;
