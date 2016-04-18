@@ -7099,11 +7099,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 459922, guid: 36780cebaaf35b6458c98246ea35d6a6, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -2.9480877
+      value: -3.3
       objectReference: {fileID: 0}
     - target: {fileID: 459922, guid: 36780cebaaf35b6458c98246ea35d6a6, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -29.123093
+      value: -28.98
       objectReference: {fileID: 0}
     - target: {fileID: 459922, guid: 36780cebaaf35b6458c98246ea35d6a6, type: 2}
       propertyPath: m_LocalPosition.z
@@ -7143,7 +7143,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 5815992, guid: 36780cebaaf35b6458c98246ea35d6a6, type: 2}
       propertyPath: m_Radius
-      value: 2.53
+      value: 4.39
       objectReference: {fileID: 0}
     - target: {fileID: 11407764, guid: 36780cebaaf35b6458c98246ea35d6a6, type: 2}
       propertyPath: TemperatureChangePerSecond
