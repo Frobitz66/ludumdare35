@@ -20,7 +20,11 @@ public class Grate : MonoBehaviour {
 
 	protected void OnPlayerStateChanged(droplet.DropletState newState){
 		var ourCollider = GetComponentInParent<Collider2D> ();
-		ourCollider.enabled = (newState == droplet.DropletState.Ice);
+        if (ourCollider != null)
+        {
+            ourCollider.enabled = (newState == droplet.DropletState.Ice);
+        }
+
 	}
 
 	void OnDisable(){
