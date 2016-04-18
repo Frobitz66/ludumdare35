@@ -16,6 +16,7 @@ public class droplet : MonoBehaviour {
 	private Vector3 startingPosition;
 	private float defaultGravityScale = 1.0f;
 	private bool isTouchingWater = false;
+	private bool canMove = true;
 
 	public enum DropletState {
 		Ice = -1,
@@ -101,7 +102,7 @@ public class droplet : MonoBehaviour {
         }
 
 		// Can only move when in gas state or not jumping
-		if (state == DropletState.Gas || grounded) 
+		if (canMove && (state == DropletState.Gas || grounded))
         {
             GetComponent<Rigidbody2D>().velocity = new Vector2(move * maxSpeed, GetComponent<Rigidbody2D>().velocity.y);
         }
@@ -117,7 +118,7 @@ public class droplet : MonoBehaviour {
         }
 
 		//Can't jump while in gas state
-		if (state != DropletState.Gas && grounded && Input.GetButtonDown("Jump"))
+		if (state != DropletState.Gas && state != DropletState.Ice && grounded && Input.GetButtonDown("Jump") && canMove)
         {
             GetComponent<Rigidbody2D>().AddForce(new Vector2(0, JumpForce));
         }
@@ -132,8 +133,16 @@ public class droplet : MonoBehaviour {
 		return 175.0f;
 	}
 
+	public float GetWarningTemperatureMax(){
+		return 150.0f;
+	}
+
 	public float GetMinTemperature(){
 		return -75.0f;
+	}
+
+	public float GetWarningTemperatureMin(){
+		return -50.0f;
 	}
 
 	// Change the Temperature of Droplet (the name is misleading)
@@ -249,5 +258,13 @@ public class droplet : MonoBehaviour {
 	void OnTriggerExit2D(Collider2D coll){
 		if (coll.gameObject.layer == LayerMask.NameToLayer ("Water"))
 			isTouchingWater = false;
+	}
+
+	public bool GetCanMove(){
+		return canMove;
+	}
+
+	public void SetCanMove(bool canMove){
+		this.canMove = canMove;
 	}
 }

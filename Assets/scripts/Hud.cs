@@ -39,6 +39,31 @@ public class Hud : MonoBehaviour {
 		if (gradientImage == null)
 			return;
 
+		float minWarning = playerDroplet.GetWarningTemperatureMin ();
+		float maxWarning = playerDroplet.GetWarningTemperatureMax ();
+
+		float currentTemp = playerDroplet.GetTemperature ();
+
+		//Are we in danger of dying?
+		if (currentTemp <= minWarning || currentTemp >= maxWarning) {
+			//If this is true, then you show the sprite at the lower end of the gauge.
+			//If not, then show it at the upper end.  If you want to do that sort of thing.
+			bool showAtLowerEnd = (currentTemp <= minWarning);
+
+
+			switch (playerDroplet.GetDropletState ()) {
+			case droplet.DropletState.Gas:
+				//Set warning sign for gas here
+				break;
+			case droplet.DropletState.Ice:
+				//Set warning sign for ice here
+				break;
+			case droplet.DropletState.Water:
+				//Set warning sign for water here
+				break;
+			}
+		}
+
 		gradientImage.fillAmount = GetPlayerHealthRatio ();
 	}
 

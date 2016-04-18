@@ -7,7 +7,6 @@ public class ButtonState : MonoBehaviour {
 	public Sprite DefaultSprite;
 	public Sprite HoverSprite;
 	private Button ourButton;
-	public string LevelToLoad;
 
 	// Use this for initialization
 	void Start () {
@@ -19,9 +18,6 @@ public class ButtonState : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (ourButton.enabled) {
-			string blah = string.Empty;
-		}
 	}
 
 	public void Hover(){
@@ -35,10 +31,7 @@ public class ButtonState : MonoBehaviour {
 		ourButton.image.sprite = DefaultSprite;
 	}
 
-	public void Click(){
-		var player = GameObject.FindGameObjectWithTag ("Player");
-		DestroyObject (player);
-		UnityEngine.SceneManagement.SceneManager.LoadScene (LevelToLoad);
+	public virtual void Click(){
 	}
 }
 
