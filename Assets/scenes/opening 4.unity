@@ -354,7 +354,7 @@ GameObject:
   - 4: {fileID: 1283192412}
   - 212: {fileID: 1283192411}
   - 61: {fileID: 1283192410}
-  - 114: {fileID: 1283192409}
+  - 114: {fileID: 1283192413}
   m_Layer: 0
   m_Name: opening4
   m_TagString: Untagged
@@ -362,17 +362,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1283192409
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1283192408}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 438c770baba1c4b4cb1e3115389af9e2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &1283192410
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -429,6 +418,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
+--- !u!114 &1283192413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1283192408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02c916315a829f5478e7ee6509ec1259, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LevelToSwitchTo: opening 5
+  SwitchOnClick: 1
 --- !u!1 &1476823313
 GameObject:
   m_ObjectHideFlags: 0

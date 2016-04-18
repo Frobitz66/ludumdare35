@@ -338,9 +338,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1707161135}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92fa8455836f4b048a8febbb10c606e1, type: 3}
+  m_Script: {fileID: 11500000, guid: 02c916315a829f5478e7ee6509ec1259, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LevelToSwitchTo: opening 2
+  SwitchOnClick: 1
 --- !u!1 &1771318148
 GameObject:
   m_ObjectHideFlags: 0

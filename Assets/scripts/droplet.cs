@@ -17,6 +17,8 @@ public class droplet : MonoBehaviour {
 	private float defaultGravityScale = 1.0f;
 	private bool isTouchingWater = false;
 	private bool canMove = true;
+    private GameObject spawnPoint;
+
 
 	public enum DropletState {
 		Ice = -1,
@@ -70,7 +72,7 @@ public class droplet : MonoBehaviour {
         groundCheck = GetComponent<CircleCollider2D>();
         animator = GetComponent<Animator>();
 		isAlive = true;
-		startingPosition = this.transform.position;
+		//startingPosition = this.transform.position;
         Camera.main.GetComponent<SmoothCamera>().target = gameObject;
 		var rigidBody = GetComponent<Rigidbody2D> ();
 		if (rigidBody)
@@ -240,6 +242,14 @@ public class droplet : MonoBehaviour {
 	public DropletState GetDropletState(){
 		return state;
 	}
+
+    public void SpawnAt(GameObject spawnPoint)
+    {
+        Camera.main.GetComponent<SmoothCamera>().target = gameObject;
+        transform.position = spawnPoint.transform.position;
+        this.spawnPoint = spawnPoint;
+        this.startingPosition = spawnPoint.transform.position;
+    }
 
 	private void Respawn(){
 		isAlive = true;

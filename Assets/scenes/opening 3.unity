@@ -273,9 +273,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1237649817}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 220e674c00fce824f92df9cb52188e5f, type: 3}
+  m_Script: {fileID: 11500000, guid: 02c916315a829f5478e7ee6509ec1259, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LevelToSwitchTo: opening 4
+  SwitchOnClick: 1
 --- !u!61 &1237649821
 BoxCollider2D:
   m_ObjectHideFlags: 0
