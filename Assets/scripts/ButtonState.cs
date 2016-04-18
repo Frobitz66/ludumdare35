@@ -32,7 +32,10 @@ public class ButtonState : MonoBehaviour {
 	}
 
 	public virtual void Click(){
-	}
+        var player = GameObject.FindGameObjectWithTag("Player");
+        DestroyObject(player);
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Lab Level");
+    }
 }
 
 
