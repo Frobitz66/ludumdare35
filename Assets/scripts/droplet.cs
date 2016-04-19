@@ -298,4 +298,38 @@ public class droplet : MonoBehaviour {
 	public void SetCanMove(bool canMove){
 		this.canMove = canMove;
 	}
+
+	public void PlayAudio(AudioClip sound){
+		AudioSource[] audios = gameObject.GetComponents<AudioSource>();
+		if(audios.Length == 0)
+			return;
+
+		AudioSource slot = audios[0];
+		if(slot.isPlaying)
+			slot.Stop();
+		
+		audios[0].clip = sound;
+		audios[0].Play();
+	}
+
+	public void StopAudio(AudioClip sound){
+		AudioSource[] audios = gameObject.GetComponents<AudioSource>();
+		if(audios.Length == 0)
+			return;
+
+		foreach(var slot in audios){
+			if(slot.clip == sound)
+				slot.Stop();
+		}
+	}
+
+	public void StopAllAudio(){
+		AudioSource[] audios = gameObject.GetComponents<AudioSource>();
+		if(audios.Length == 0)
+			return;
+
+		foreach(var slot in audios){
+			slot.Stop();
+		}
+	}
 }

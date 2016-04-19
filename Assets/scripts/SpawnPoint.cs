@@ -11,9 +11,8 @@ public class SpawnPoint : MonoBehaviour {
 		if (playerDroplet != null)
 		{
 			//Debug.Log("Setting droplet start pos: " + GetComponent<Transform>().position);
-			AudioSource[] audios = playerDroplet.gameObject.GetComponents<AudioSource>();
-			audios[0].clip = LevelAmbientSound;
-			audios[0].Play();
+			playerDroplet.StopAllAudio();
+			playerDroplet.PlayAudio(LevelAmbientSound);
 			playerDroplet.SpawnAt(this.gameObject);
 			var otherPlayers = GameObject.FindObjectsOfType<droplet>();
 			Debug.Log(string.Format("Amount of droplets in scene: {0}", otherPlayers.Length));
