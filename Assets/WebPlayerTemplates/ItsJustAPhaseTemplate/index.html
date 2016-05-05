@@ -1,0 +1,177 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+		<title>Unity Web Player | %UNITY_WEB_NAME%</title>
+		%UNITY_UNITYOBJECT_DEPENDENCIES%
+		<script type="text/javascript">
+		<!--
+		var unityObjectUrl = "%UNITY_UNITYOBJECT_URL%";
+		if (document.location.protocol == 'https:')
+			unityObjectUrl = unityObjectUrl.replace("http://", "https://ssl-");
+		document.write('<script type="text\/javascript" src="' + unityObjectUrl + '"><\/script>');
+		-->
+		</script>
+		<script type="text/javascript">
+		<!--
+			var config = {
+				width: %UNITY_WIDTH%, 
+				height: %UNITY_HEIGHT%,
+				params: %UNITY_PLAYER_PARAMS%
+				%UNITY_SET_BASE_DOWNLOAD_URL%
+			};
+			var u = new UnityObject2(config);
+
+			jQuery(function() {
+
+				var $missingScreen = jQuery("#unityPlayer").find(".missing");
+				var $brokenScreen = jQuery("#unityPlayer").find(".broken");
+				$missingScreen.hide();
+				$brokenScreen.hide();
+				
+				u.observeProgress(function (progress) {
+					switch(progress.pluginStatus) {
+						case "broken":
+							$brokenScreen.find("a").click(function (e) {
+								e.stopPropagation();
+								e.preventDefault();
+								u.installPlugin();
+								return false;
+							});
+							$brokenScreen.show();
+						break;
+						case "missing":
+							$missingScreen.find("a").click(function (e) {
+								e.stopPropagation();
+								e.preventDefault();
+								u.installPlugin();
+								return false;
+							});
+							$missingScreen.show();
+						break;
+						case "installed":
+							$missingScreen.remove();
+						break;
+						case "first":
+						break;
+					}
+				});
+				u.initPlugin(jQuery("#unityPlayer")[0], "%UNITY_WEB_PATH%");
+			});
+		-->
+		</script>
+		<style type="text/css">
+		<!--
+		body {
+			font-family: Helvetica, Verdana, Arial, sans-serif;
+			background-color: white;
+			color: black;
+			text-align: center;
+		}
+		a:link, a:visited {
+			color: #000;
+		}
+		a:active, a:hover {
+			color: #666;
+		}
+		p.header {
+			font-size: small;
+		}
+		p.header span {
+			font-weight: bold;
+		}
+		p.footer {
+			font-size: x-small;
+		}
+		div.content {
+			margin: auto;
+			width: %UNITY_WIDTH%px;
+		}
+		div.broken,
+		div.missing {
+			margin: auto;
+			position: relative;
+			top: 50%;
+			width: 193px;
+		}
+		div.broken a,
+		div.missing a {
+			height: 63px;
+			position: relative;
+			top: -31px;
+		}
+		div.broken img,
+		div.missing img {
+			border-width: 0px;
+		}
+		div.broken {
+			display: none;
+		}
+		div#unityPlayer {
+			cursor: default;
+			height: %UNITY_HEIGHT%px;
+			width: %UNITY_WIDTH%px;
+		}
+		-->
+		</style>
+	</head>
+	<body>
+		<p class="header"><span>Unity Web Player | </span>%UNITY_WEB_NAME%</p>%UNITY_BETA_WARNING%
+		<div class="content">
+			<div id="unityPlayer">
+				<div class="missing">
+					<a href="http://unity3d.com/webplayer/" title="Unity Web Player. Install now!">
+						<img alt="Unity Web Player. Install now!" src="http://webplayer.unity3d.com/installation/getunity.png" width="193" height="63" />
+					</a>
+				</div>
+				<div class="broken">
+					<a href="http://unity3d.com/webplayer/" title="Unity Web Player. Install now! Restart your browser after install.">
+						<img alt="Unity Web Player. Install now! Restart your browser after install." src="http://webplayer.unity3d.com/installation/getunityrestart.png" width="193" height="63" />
+					</a>
+				</div>
+			</div>
+		</div>
+
+
+<div class="text-left" >
+<div class="container">
+  <div class="jumbotron">
+<p class="lead">Droplet has been kidnapped! Help him phase between solid, liquid, and gas to bring him home.</p>
+
+<div class="list-group">
+  <a href="#" class="list-group-item active">Movement</a>
+  <a href="#" class="list-group-item"><kbd>w</kbd> to jump</a>
+  <a href="#" class="list-group-item"><kbd>A</kbd> and <kbd>D</kbd> to move left and right.</a>
+</div>
+<div class="list-group">
+  <a href="#" class="list-group-item active">Gameplay</a>
+  <a href="#" class="list-group-item">When droplet gets near <span class="label label-danger">red</span> crystals, he gets warm and turns to his gas phase. He can float up and move around.</a>
+  <a href="#" class="list-group-item">When droplet gets near <span class="label label-info">blue</span> crystals, he gets cold and turns to his solid form. He can slide and break through walls.</a>
+    <a href="#" class="list-group-item">If he gets too warm or too cold, he is in danger. A flashing indicator near the thermometer will let you know this. Cool him off or heat him up. </a>
+	  <a href="#" class="list-group-item">Droplet will slowly go back to room temperature on his own.</a>
+	  <a href="#" class="list-group-item">He can only go through small openings (like grates) in gas or liquid phase.</a>
+</div>
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading">Ludum Dare 35</div>
+  <div class="panel-body">
+<p>This hardcore platformer was forged from the sweat of 14 talented people many of whom never worked together. They just showed up, a team started to be formed and then even more showed up. This is what I love about Ludum Dare! 
+</p>
+<p>All art, music, animation, and cutesy you-just-died-again mood created within period of the Ludum Dare contest. 
+</p>
+Special thanks to Tinkermill for hosting us so we could all come together and be creative and have a great time.
+</div>
+</div>
+
+</div>		
+</div>
+</div>
+		
+		
+	</body>
+</html>

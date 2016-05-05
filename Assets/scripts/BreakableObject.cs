@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class BreakableObject : MonoBehaviour {
-
+	// testing git branching
 	private Animator animator;
 	// Use this for initialization
 	void Start () {
