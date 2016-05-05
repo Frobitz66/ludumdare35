@@ -2,13 +2,14 @@
 using System.Collections;
 
 public class droplet : MonoBehaviour {
+	public const float START_TEMP = 21.0f;
     public float maxSpeed = 10f;
     public bool grounded = true;
     public LayerMask whatIsGround;
     public float JumpForce = 50;
     private float groundRadius = 1.5f;
     private Animator animator;
-	private float temperature = 21.0f;
+	private float temperature = START_TEMP;
 	public int Lives = 3;
 	private bool isAlive = true;
 	private float respawnTime; //The time at which we should respawn
@@ -129,6 +130,11 @@ public class droplet : MonoBehaviour {
         }
 			
     }
+
+	public void resetDropletStateToWater() {
+		temperature = START_TEMP;
+		SetDropletState (DropletState.Water);
+	}
 		
 	public float GetTemperature(){
 		return temperature;

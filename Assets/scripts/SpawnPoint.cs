@@ -14,6 +14,7 @@ public class SpawnPoint : MonoBehaviour {
 			playerDroplet.StopAllAudio();
 			playerDroplet.PlayAudio(LevelAmbientSound);
 			playerDroplet.SpawnAt(this.gameObject);
+
 			var otherPlayers = GameObject.FindObjectsOfType<droplet>();
 			Debug.Log(string.Format("Amount of droplets in scene: {0}", otherPlayers.Length));
 			for(int i = 0; i < otherPlayers.Length; ++i){
@@ -23,6 +24,8 @@ public class SpawnPoint : MonoBehaviour {
 					Destroy(otherPlayer.gameObject);
 				}
 			}
+			playerDroplet.resetDropletStateToWater ();
+			Debug.Log ("Turning back into water");
 		}
 	}
 }
