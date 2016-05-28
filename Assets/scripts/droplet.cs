@@ -7,7 +7,6 @@ public class droplet : MonoBehaviour {
     public bool grounded = true;
     public LayerMask whatIsGround;
     public float JumpForce = 50;
-    private float groundRadius = 1.5f;
     private Animator animator;
 	private float temperature = START_TEMP;
 	public int Lives = 3;
@@ -131,7 +130,7 @@ public class droplet : MonoBehaviour {
 			
     }
 
-	public void resetDropletStateToWater() {
+	private void ResetDropletStateToWater() {
 		temperature = START_TEMP;
 		SetDropletState (DropletState.Water);
 	}
@@ -255,6 +254,7 @@ public class droplet : MonoBehaviour {
         transform.position = spawnPoint.transform.position;
         this.spawnPoint = spawnPoint;
         this.startingPosition = spawnPoint.transform.position;
+		ResetDropletStateToWater();
     }
 
 	public void Respawn(){
@@ -281,6 +281,7 @@ public class droplet : MonoBehaviour {
 		}
 
 		this.transform.position = (spawnPoint == null) ? startingPosition : spawnPoint.transform.position;
+		ResetDropletStateToWater ();
 		if (OnPlayerSpawned != null)
 			OnPlayerSpawned ();
 

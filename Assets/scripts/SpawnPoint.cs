@@ -24,8 +24,6 @@ public class SpawnPoint : MonoBehaviour {
 					Destroy(otherPlayer.gameObject);
 				}
 			}
-			playerDroplet.resetDropletStateToWater ();
-			Debug.Log ("Turning back into water");
 		}
 	}
 }

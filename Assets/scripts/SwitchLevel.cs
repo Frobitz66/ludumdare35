@@ -17,11 +17,8 @@ public class SwitchLevel : MonoBehaviour {
 
 	public static void SwitchToLevel(GameObject playerObject, string level)
 	{
-		
 		GameState.SetPlayerDroplet(playerObject);
 		GameState.GetPlayerDroplet().StopAllAudio();
-		GameState.GetPlayerDroplet ().resetDropletStateToWater ();
-		Debug.Log ("switch level -- turning to water");
 		SceneManager.LoadScene(level);
 	}
 
